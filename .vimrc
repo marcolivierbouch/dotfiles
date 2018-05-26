@@ -1,6 +1,6 @@
 " Show status line
 "set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
-set laststatus=2
+" set laststatus=2
 
 " Json
 set conceallevel=0
@@ -54,6 +54,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'L9'
+Plugin 'mileszs/ack.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Kien/ctrlp.vim'
 Plugin 'ddrscott/vim-side-search'
@@ -149,8 +150,6 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
-
-
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.php =
 \ ['->', '::', '(', 'use ', 'namespace ', '\']
@@ -180,7 +179,7 @@ let g:netrw_altv=1
 let g:netrw_listtyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
-" template
+" template TODO add the template
 nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 
 " colorscheme settings
