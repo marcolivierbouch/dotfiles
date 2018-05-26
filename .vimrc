@@ -1,8 +1,11 @@
 " Show status line
 set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 set laststatus=2
+
 " Json
 set conceallevel=0
+
+set path+=**
 
 set noerrorbells
 
@@ -44,13 +47,11 @@ set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'crusoexia/vim-monokai'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Kien/ctrlp.vim'
 Plugin 'rhysd/vim-clang-format'
@@ -58,11 +59,7 @@ Plugin 'ddrscott/vim-side-search'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'janko-m/vim-test'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'Yggdroot/indentLine'
 Plugin 'majutsushi/tagbar'
 Plugin 'ericcurtin/CurtineIncSw.vim'
 Plugin 'elzr/vim-json'
@@ -121,8 +118,8 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 "
 " monokai
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+" let g:monokai_term_italic = 1
+" let g:monokai_gui_italic = 1
 
 " CTRLP settings
 let g:ctrlp_working_path_mode = 'ra'
@@ -143,9 +140,6 @@ let g:NERDAltDelims_java = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
-
-" Indent line config
-let g:indentLine_char = '┆'
 
 " C++ Sw
 map <leader>s :call CurtineIncSw()<CR>
@@ -177,7 +171,6 @@ nmap s <Plug>(easymotion-s2)
 " nmap t <Plug>(easymotion-t2)
 map  / <Plug>(easymotion-sn)
 " omap / <Plug>(easymotion-tn)
-
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
