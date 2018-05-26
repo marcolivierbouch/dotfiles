@@ -1,11 +1,14 @@
 " Show status line
-set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
+"set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 set laststatus=2
 
 " Json
 set conceallevel=0
 
 set path+=**
+
+"colemak
+nnoremap n j|xnoremap n j|onoremap n j|
 
 set noerrorbells
 
@@ -51,18 +54,14 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'L9'
-Plugin 'FuzzyFinder'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Kien/ctrlp.vim'
-Plugin 'rhysd/vim-clang-format'
 Plugin 'ddrscott/vim-side-search'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'majutsushi/tagbar'
-Plugin 'ericcurtin/CurtineIncSw.vim'
-Plugin 'elzr/vim-json'
 Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -95,7 +94,8 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
-" configure tags - add additional tags here or comment out not-used ones
+command! MakeTags !ctags -R .
+" configure tags - add additional tags here 
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
@@ -158,35 +158,30 @@ let g:ycm_semantic_triggers.php =
 " Angular ts
 autocmd BufNewFile,BufRead *.ts set ft=typescript
 autocmd BufNewFile,BufRead *.*.ts set ft=typescript
-
 autocmd BufNewFile,BufRead *.ts set tabstop=2
 autocmd BufNewFile,BufRead *.*.ts set shiftwidth=2
+
 " Gif config
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-s2)
 " nmap t <Plug>(easymotion-t2)
 map  / <Plug>(easymotion-sn)
 " omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+map  j <Plug>(easymotion-next)
+map  J <Plug>(easymotion-prev)
 
 " Fish cpp
 autocmd Filetype c,cpp setlocal comments^=:///
 
-" Clang format config
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11"}
+" File browsing
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_listtyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
 
-" map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <Leader>cf :ClangFormat<CR>
-" if you install vim-operator-user
-autocmd FileType c,cpp,objc map <Leader>x <Plug>(operator-clang-format)
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
+" template
+nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 
 " colorscheme settings
 " set termguicolors
