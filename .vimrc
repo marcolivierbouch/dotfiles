@@ -116,10 +116,6 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-"
-" monokai
-" let g:monokai_term_italic = 1
-" let g:monokai_gui_italic = 1
 
 " CTRLP settings
 let g:ctrlp_working_path_mode = 'ra'
