@@ -72,8 +72,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Kien/ctrlp.vim'
 let g:ctrlp_working_path_mode = 'ra'
 
-Plugin 'ddrscott/vim-side-search'
-
 Plugin 'xuhdev/vim-latex-live-preview'
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'mupdf'
