@@ -9,7 +9,7 @@ end
 # set POWERLINE_BASH_CONTINUATION 1
 # set POWERLINE_BASH_SELECT 1
 #
-# set fish_function_path $fish_function_path "/home/marc-olivier/.local/lib/python3.6/site-packages/powerline/bindings/fish/"
+# set fish_function_path $fish_function_path "~/.local/lib/python3.6/site-packages/powerline/bindings/fish/"
 # powerline-setup
 set fish_greeting ""
 
@@ -33,6 +33,6 @@ set fish_color_autosuggestion 586e75
 
 tmux source-file ~/.tmux.conf
 
-source /home/marc-olivier/.config/fish/lol.fish
+source ~/.config/fish/lol.fish
 
 set -gx EDITOR vim
