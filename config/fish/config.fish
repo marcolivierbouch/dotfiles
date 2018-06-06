@@ -34,3 +34,5 @@ set fish_color_autosuggestion 586e75
 tmux source-file ~/.tmux.conf
 
 source /home/marc-olivier/.config/fish/lol.fish
+
+set -gx EDITOR vim
