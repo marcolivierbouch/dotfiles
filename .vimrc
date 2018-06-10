@@ -144,6 +144,9 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " TODO add the template
 nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 
+" Add line
+nmap M O<Esc>j
+nmap m o<Esc>k
 
 " colorscheme settings
 set t_Co=16
