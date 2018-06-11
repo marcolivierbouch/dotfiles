@@ -132,7 +132,7 @@ map <leader>mt :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<C
 
 " cscope settings
 if has('cscope')
-  " create a cscope auto 
+  " add cscope file auto 
   if filereadable("cscope.out")
       cs add cscope.out
   endif
@@ -160,9 +160,9 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " TODO add the template
 nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 
-" Add line
-nmap M O<Esc>j
-nmap m o<Esc>k
+" Add line empty line
+nmap ]<Space> m`o<Esc>``
+nmap [<Space> m`O<Esc>``
 
 " colorscheme settings
 set t_Co=16
@@ -170,3 +170,4 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
