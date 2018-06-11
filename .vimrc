@@ -127,8 +127,24 @@ map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 
-" build tags of your own project with Ctrl-F12
+" build tags
 map <leader>mt :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" cscope settings
+if has('cscope')
+  " create a cscope auto 
+  if filereadable("cscope.out")
+      cs add cscope.out
+  endif
+
+  set cscopeverbose
+
+  nmap <C-[>h :cs help<CR>
+  nmap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
+  nmap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
+  nmap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>	
+  nmap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
+endif
 
 " Fish cpp
 autocmd Filetype c,cpp setlocal comments^=:///
