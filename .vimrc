@@ -1,12 +1,9 @@
 " Show status line
 "set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
-" set laststatus=2
+set laststatus=2
 
 " Json
 set conceallevel=0
-
-" Path
-set path+=**
 
 set noerrorbells
 
@@ -41,7 +38,7 @@ set wildmenu
 "noremap <Down> <Nop>
 "noremap <Left> <Nop>
 "noremap <Right> <Nop>
-
+set shell=/bin/bash
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -109,13 +106,12 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.php =
-\ ['->', '::', '(', 'use ', 'namespace ', '\']
 
 Plugin 'tpope/vim-surround'
 
-call vundle#end()
+Plugin 'itchyny/lightline.vim'
 
+call vundle#end()
 
 filetype plugin indent on
 
@@ -132,7 +128,7 @@ map <leader>mt :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<C
 
 " cscope settings
 if has('cscope')
-  " add cscope file auto 
+  " create a cscope auto 
   if filereadable("cscope.out")
       cs add cscope.out
   endif
@@ -160,14 +156,13 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " TODO add the template
 nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 
-" Add line empty line
-nmap ]<Space> m`o<Esc>``
-nmap [<Space> m`O<Esc>``
+" Add line
+nmap [<Space> m'O<Esc>''
+nmap ]<Space> m'o<Esc>''
 
 " colorscheme settings
 set t_Co=16
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
-
+colorscheme solarized 
