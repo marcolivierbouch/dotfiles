@@ -1,6 +1,8 @@
 " Show status line
 "set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 " set laststatus=2
+set background=dark
+colorscheme solarized
 
 " Json
 set conceallevel=0
@@ -50,6 +52,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'morhetz/gruvbox'
+
 Plugin 'davidhalter/jedi-vim'
 autocmd FileType python let g:jedi#auto_initialization = 1
 autocmd FileType python let g:jedi#auto_vim_configuration = 1
@@ -95,10 +99,10 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-Plugin 'octol/vim-cpp-enhanced-highlight'
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
+" Plugin 'octol/vim-cpp-enhanced-highlight'
+ " let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
 
 Plugin 'majutsushi/tagbar'
 nmap <leader>tb :TagbarToggle<CR>
@@ -162,11 +166,4 @@ nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
 " Add line empty line
 nmap ]<Space> m`o<Esc>``
 nmap [<Space> m`O<Esc>``
-
-" colorscheme settings
-set t_Co=16
-syntax enable
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
 
