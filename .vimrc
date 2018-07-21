@@ -52,7 +52,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'ericcurtin/CurtineIncSw.vim'
+map <leader>s :call CurtineIncSw()<CR>
 
 Plugin 'davidhalter/jedi-vim'
 autocmd FileType python let g:jedi#auto_initialization = 1
@@ -61,13 +62,11 @@ autocmd FileType python let g:jedi#use_tabs_not_buffers = 1
 autocmd FileType python let g:jedi#use_splits_not_buffers = "left"
 autocmd FileType python setlocal completeopt-=preview
 
-
 Plugin 'scrooloose/nerdtree'
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
 let NERDTreeShowHidden=1
 nmap <leader>nt :NERDTreeToggle<cr>
-
 
 Plugin 'L9'
 
@@ -118,7 +117,6 @@ let g:ycm_semantic_triggers.php =
 Plugin 'tpope/vim-surround'
 
 call vundle#end()
-
 
 filetype plugin indent on
 
