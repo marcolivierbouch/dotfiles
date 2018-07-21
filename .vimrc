@@ -18,7 +18,7 @@ set mouse=a
 
 set shell=/bin/bash
 
-set ai "Auto indent
+" set ai "Auto indent
 
 set nowrap
 set encoding=utf-8
@@ -36,6 +36,8 @@ set pastetoggle=<F2>
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Handle bracket
+inoremap {<CR> {<CR>}<Esc>O<TAB>
 
 " Turn on the WiLd menu
 set wildmenu
@@ -81,7 +83,6 @@ Plugin 'xuhdev/vim-latex-live-preview'
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'mupdf'
 
-
 Plugin 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-s2)
@@ -117,8 +118,6 @@ let g:ycm_semantic_triggers.php =
 Plugin 'tpope/vim-surround'
 
 call vundle#end()
-
-filetype plugin indent on
 
 " asm config
 autocmd FileType asm set ft=nasm
