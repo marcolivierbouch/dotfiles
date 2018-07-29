@@ -1,6 +1,5 @@
 " Show status line
-"set rtp+=~/.local/lib/python3.6/site-packages/powerline/bindings/vim/
-" set laststatus=2
+set laststatus=2
 set background=dark
 colorscheme solarized
 
@@ -18,8 +17,6 @@ set mouse=a
 
 set shell=/bin/bash
 
-" set ai "Auto indent
-
 set nowrap
 set encoding=utf-8
 set number relativenumber " set number
@@ -32,12 +29,20 @@ augroup END
 
 set pastetoggle=<F2>
 
+" set ai "Auto indent
 " 1 tab == 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 " Handle bracket
 inoremap {<CR> {<CR>}<Esc>O<TAB>
+" indentation mapping
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 
 " Turn on the WiLd menu
 set wildmenu
@@ -53,6 +58,8 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'ericcurtin/CurtineIncSw.vim'
 map <leader>s :call CurtineIncSw()<CR>
