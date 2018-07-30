@@ -1,0 +1,16 @@
+#ifndef _HEADER_H_
+#define _HEADER_H_
+
+class NewClass 
+{
+ 
+public:
+    NewClass();
+    ~NewClass();
+
+private:
+    int number;
+};
+
+
+#endif  

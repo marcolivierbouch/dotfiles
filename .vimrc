@@ -43,7 +43,6 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
-
 " Turn on the WiLd menu
 set wildmenu
 
@@ -108,19 +107,23 @@ let g:NERDTrimTrailingWhitespace = 1
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
+" let g:cpp_member_variable_highlight = 1
 " let g:cpp_class_decl_highlight = 1
 
 Plugin 'majutsushi/tagbar'
 nmap <leader>tb :TagbarToggle<CR>
 
 Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>f :YcmCompleter FixIt<CR>
+map <leader>t :YcmCompleter GetType<CR>
+map <leader>d :YcmCompleter GetDoc<CR>
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.php =
-\ ['->', '::', '(', 'use ', 'namespace ', '\']
+" let g:ycm_semantic_triggers.php =
+" \ ['->', '::', '(', 'use ', 'namespace ', '\']
 
 Plugin 'tpope/vim-surround'
 
@@ -163,9 +166,9 @@ let g:netrw_altv=1
 let g:netrw_listtyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
-" template 
-" TODO add the template
-nnoremap ,cpph :-1read $HOME/.vim/.skeleton.h<CR>3jwf>a
+" templates
+nnoremap ,pyh :-1read $HOME/.vim/templates/python_header.txt<CR>3jwf>a
+nnoremap ,cpph :-1read $HOME/.vim/templates/cpp_header.txt<CR>3jwf>a
 
 " Add line empty line
 nmap ]<Space> m`o<Esc>``
