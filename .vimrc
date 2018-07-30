@@ -29,7 +29,7 @@ augroup END
 
 set pastetoggle=<F2>
 
-" set ai "Auto indent
+set ai "Auto indent
 " 1 tab == 4 spaces
 set tabstop=4
 set shiftwidth=4
@@ -106,9 +106,9 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
-" Plugin 'octol/vim-cpp-enhanced-highlight'
- " let g:cpp_class_scope_highlight = 1
-" let g:cpp_member_variable_highlight = 1
+Plugin 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
 " let g:cpp_class_decl_highlight = 1
 
 Plugin 'majutsushi/tagbar'
