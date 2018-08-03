@@ -43,6 +43,16 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" better search and replace for
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Faster exit and write
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+" Search while tyging
+set incsearch
+
 " Turn on the WiLd menu
 set wildmenu
 
@@ -61,7 +71,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
 Plugin 'ericcurtin/CurtineIncSw.vim'
-map <leader>s :call CurtineIncSw()<CR>
+map <leader>c :call CurtineIncSw()<CR>
 
 Plugin 'davidhalter/jedi-vim'
 autocmd FileType python let g:jedi#auto_initialization = 1
@@ -88,13 +98,6 @@ let g:ctrlp_working_path_mode = 'ra'
 Plugin 'xuhdev/vim-latex-live-preview'
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'mupdf'
-
-Plugin 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-nmap s <Plug>(easymotion-s2)
-map  / <Plug>(easymotion-sn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
 
 Plugin 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
