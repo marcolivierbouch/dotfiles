@@ -17,9 +17,9 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left text rendering 
 #and scalability on retina/hidpi displays (thanks to
 #pango).
-#font pango:DejaVu Sans Mono 8
+#font pango:monospace 10
 #font pango:Terminus 11px
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 10
 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 12
 font pango:Terminus 12px
@@ -29,7 +29,8 @@ floating_modifier $mod
 
 # My powerline font (Source Code Pro for Powerline Regular 11)
 # Terminal I want to use
-set $terminal urxvt -e tmux
+set $terminal i3-sensible-terminal  
+#urxvt -e tmux
 #i3-sensible-terminal
 #urxvt -tr -tint white -sh 30
 
@@ -96,16 +97,17 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # take screenshot
-bindsym $mod+Print exec scrot ~/screenshots/%Y-%m-%d-%T-screenshot.jpg
+bindsym $mod+Print exec scrot ~/Screenshots/%Y-%m-%d-%T-screenshot.png
+bindsym --release $mod+Shift+Print exec scrot -s ~/Screenshots/%Y-%m-%d-%T-screenshot.png
 
 # Backgroud and other setting on start
-exec --no-startup-id feh --bg-scale ~/.config/i3/pictures/hex1-arch.png
+exec --no-startup-id feh --bg-scale ~/.config/i3/images/gentoo-cow.png
 
 # start Compton
-exec --no-startup-id exec xcompmgr -C
+exec --no-startup-id exec compton -C
 
 # Start nm-applet
-exec --no-startup-id exec nm-applet
+#exec --no-startup-id exec nm-applet
 
 # Start polybar
 # exec --no-startup-id exec polybar mybar
@@ -117,15 +119,15 @@ bindsym $mod+z exec setxkbmap -layout us -variant colemak -option caps:escape
 bindsym $mod+m exec setxkbmap -layout ca
 
 # Start conky
-exec --no-startup-id exec conky
+# exec --no-startup-id exec conky
 
 # Lock screen
-bindsym $mod+Shift+x exec '/home/'$USER'/.config/i3/scripts/i3lock-fancy/lock'
+bindsym $mod+Shift+x exec bash ~/.config/i3/scripts/i3lock-fancy/lock
 
 # rjekker/i3-battery-popup config 
-for_window [title="Battery Warning"] sticky enable
-exec --no-startup-id dunst
-exec --no-startup-id i3-battery-popup -L 25 -m 'Battery is low'
+# for_window [title="Battery Warning"] sticky enable
+# exec --no-startup-id dunst
+# exec --no-startup-id i3-battery-popup -L 25 -m 'Battery is low'
 
 # Name the workspaces
 # set $tag1 "1: Main"
@@ -135,7 +137,7 @@ exec --no-startup-id i3-battery-popup -L 25 -m 'Battery is low'
 #workspace 1 with terminal
 exec --no-startup-id i3-msg 'workspace 1; exec $terminal'
 #workspace 2 with chrome 
-exec --no-startup-id i3-msg 'workspace 2; exec google-chrome-stable'
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
 #exec qutebrowser --backend=webkit' 
 #workspace 9 with spotify
 #exec --no-startup-id i3-msg 'workspace 9; exec spotify'
@@ -220,7 +222,7 @@ bar {
      }
 }
 
-gaps inner 8
-gaps outer 5
+# gaps inner 8
+# gaps outer 5
 new_window pixel 3
 
