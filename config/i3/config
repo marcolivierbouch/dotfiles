@@ -29,8 +29,7 @@ floating_modifier $mod
 
 # My powerline font (Source Code Pro for Powerline Regular 11)
 # Terminal I want to use
-set $terminal i3-sensible-terminal  
-#urxvt -e tmux
+set $terminal urxvt -e tmux
 #i3-sensible-terminal
 #urxvt -tr -tint white -sh 30
 
@@ -101,7 +100,7 @@ bindsym $mod+Print exec scrot ~/Screenshots/%Y-%m-%d-%T-screenshot.png
 bindsym --release $mod+Shift+Print exec scrot -s ~/Screenshots/%Y-%m-%d-%T-screenshot.png
 
 # Backgroud and other setting on start
-exec --no-startup-id feh --bg-scale ~/.config/i3/images/gentoo-cow.png
+exec --no-startup-id feh --bg-scale ~/.config/i3/pictures/hex1-arch.png
 
 # start Compton
 exec --no-startup-id exec compton -C
