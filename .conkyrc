@@ -71,7 +71,7 @@ TEXT
 ${voffset +2}
 ${color0}${font Noto Sans:size=16:style=bold}${time %A}\
 ${color0}${goto 35}${offset 110}${voffset -25}${font Noto Sans:size=60}${time %d}
-${color2}${voffset -113}${font Noto Sans:size=12}${alignr 450}${time %B}$font
+${color2}${voffset -90}${font Noto Sans:size=12}${alignr 450}${time %B}$font
 ${voffset -5}${color8}${hr 2}
 
 #Kernel
