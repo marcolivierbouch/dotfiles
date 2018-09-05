@@ -3,6 +3,8 @@ set laststatus=2
 set background=dark
 colorscheme solarized
 
+syntax on
+
 " Json
 set conceallevel=0
 
