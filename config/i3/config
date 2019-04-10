@@ -35,6 +35,7 @@ set $terminal urxvt -e tmux
 
 # start a terminal
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec xfce4-terminal 
 #urxvt -tr -tint grey -sh 10
 #i3-sensible-terminal
 
@@ -52,10 +53,10 @@ bindsym $mod+c exec rofi -show window
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -64,13 +65,13 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+e move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+n split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -81,7 +82,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+k layout toggle split
+bindsym $mod+b layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -103,7 +104,7 @@ bindsym --release $mod+Shift+Print exec scrot -s ~/Screenshots/%Y-%m-%d-%T-scree
 exec --no-startup-id feh --bg-scale ~/.config/i3/pictures/hex1-arch.png
 
 # start Compton
-exec --no-startup-id exec compton -C
+exec --no-startup-id exec xcompmgr -C
 
 # Start nm-applet
 #exec --no-startup-id exec nm-applet
@@ -111,14 +112,13 @@ exec --no-startup-id exec compton -C
 # Start polybar
 # exec --no-startup-id exec polybar mybar
 
-#Set Colemak
-exec --no-startup-id exec setxkbmap -layout us -variant colemak -option caps:escape
+exec --no-startup-id exec setxkbmap -layout us -option caps:escape
 
-bindsym $mod+z exec setxkbmap -layout us -variant colemak -option caps:escape
+bindsym $mod+z exec setxkbmap -layout us -option caps:escape
 bindsym $mod+m exec setxkbmap -layout ca
 
 # Start conky
-# exec --no-startup-id exec conky
+exec --no-startup-id exec conky
 
 # Lock screen
 bindsym $mod+Shift+x exec bash ~/.config/i3/scripts/i3lock-fancy/lock
@@ -221,7 +221,7 @@ bar {
      }
 }
 
-# gaps inner 8
-# gaps outer 5
+# gaps inner 4
+# gaps outer 3
 new_window pixel 3
 
